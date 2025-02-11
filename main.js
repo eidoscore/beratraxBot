@@ -51,7 +51,7 @@ async function claimTokens(address, proxy, type, apiKey, useCaptcha = false, ret
 
 async function setConnector(address, proxy, retries = 3) {
     const agent = newAgent(proxy)
-    const url = "https://beratrax-api-ae00332865bc.herokuapp.com/api/v1/account/set-connector";
+    const url = "https://beratrax-testnet-api-839773c979b6.herokuapp.com/api/v1/account/set-connector";
     const data = {
         address,
         connector: "io.metamask"
@@ -70,7 +70,7 @@ async function setConnector(address, proxy, retries = 3) {
 
 async function createAccount(address, proxy, retries = 3) {
     const agent = newAgent(proxy)
-    const url = "https://beratrax-api-ae00332865bc.herokuapp.com/api/v1/account";
+    const url = "https://beratrax-testnet-api-839773c979b6.herokuapp.com/api/v1/account";
     const data = {
         address,
         referrer: "GeognosticalBera"
@@ -90,7 +90,7 @@ async function createAccount(address, proxy, retries = 3) {
 
 async function claimPointsFromFollow(address, proxy, retries = 3) {
     const agent = newAgent(proxy)
-    const url = "https://beratrax-api-ae00332865bc.herokuapp.com/api/v1/account/send-btx-for-x-follow";
+    const url = "https://beratrax-testnet-api-839773c979b6.herokuapp.com/api/v1/account/send-btx-for-x-follow";
     const data = {
         address
     };
@@ -108,7 +108,7 @@ async function claimPointsFromFollow(address, proxy, retries = 3) {
 
 async function getPointsUser(address, proxy, retries = 3) {
     const agent = newAgent(proxy)
-    const url = `https://beratrax-api-ae00332865bc.herokuapp.com/api/v1/stats/tvl?address=${address}`;
+    const url = `https://beratrax-testnet-api-839773c979b6.herokuapp.com/api/v1/stats/tvl?address=${address}`;
 
     try {
         const { data } = await axios.get(url, {
@@ -131,7 +131,7 @@ async function getPointsUser(address, proxy, retries = 3) {
 
 async function updateHistoryTx(address, proxy, amount, retries = 3) {
     const agent = newAgent(proxy)
-    const url = "https://beratrax-api-ae00332865bc.herokuapp.com/api/v1/transaction/save-history-tx";
+    const url = "https://beratrax-testnet-api-839773c979b6.herokuapp.com/api/v1/transaction/save-history-tx";
     const data = {
         "from": address,
         "amountInWei": amount,
